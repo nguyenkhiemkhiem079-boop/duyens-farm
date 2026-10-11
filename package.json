@@ -1,36 +1,33 @@
 {
-  "name": "duyens-farm",
+  "name": "duyen-four-fields",
+  "version": "1.0.0",
   "private": true,
-  "version": "0.0.0",
+  "description": "Duyên chăm nông trại Four Fields và mở những trang chuyện của Khim và Duyên.",
+  "license": "MIT",
   "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
   "scripts": {
-    "dev": "vite --port=3000 --host=0.0.0.0",
+    "dev": "vite --host 0.0.0.0 --port 3030",
     "build": "vite build",
     "preview": "vite preview",
-    "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit",
-    "test": "node --import tsx src/tests/gameAudit.test.ts && node --import tsx src/tests/cleanupAudit.test.ts",
-    "todos": "node scripts/todos.mjs"
+    "test": "tsx --test src/tests/*.test.ts"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.3.3",
-    "@vitejs/plugin-react": "^6.1.1",
-    "lucide-react": "^0.546.0",
-    "react": "^19.0.1",
-    "react-dom": "^19.0.1",
-    "three": "^0.186.1",
-    "vite": "^8.3.0"
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "three": "^0.185.1"
   },
   "devDependencies": {
-    "@types/node": "^22.14.0",
-    "@types/react": "^19.3.0",
-    "@types/react-dom": "^19.3.0",
-    "@types/three": "^0.186.0",
-    "tailwindcss": "^4.3.3",
-    "tsx": "^4.21.0",
-    "typescript": "^7.0.2"
-  },
-  "engines": {
-    "node": ">=22.12.0"
+    "@types/node": "^26.6.5",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@types/three": "^0.185.1",
+    "@vitejs/plugin-react": "6.0.2",
+    "tsx": "^4.23.15",
+    "typescript": "5.9.3",
+    "vite": "8.0.13"
   }
 }

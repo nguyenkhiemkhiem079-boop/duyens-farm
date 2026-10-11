@@ -1,77 +1,40 @@
-# Duyên's Farm — Nông trại của Duyên
+# Nông trại của Duyên — bản bắt đầu lại từ Four Fields
 
-Game nông trại 3D TypeScript + React + Three.js + Vite, món quà Khim dành cho Duyên. Lần bàn giao này chỉ thực hiện **Part A — cleanup/QA**; chưa bắt đầu Part D/B/E.
+Dùng trực tiếp toàn bộ source của [Four Fields](https://github.com/mintdotgg/mint-playground/tree/main/experiences/four-fields), revision `5ab1b942b6bb5169a0460b3cc682fe34fae76293`. Bản gốc vẫn chơi được tại https://play.mint.gg/four-fields.
 
-## Cài đặt và chạy
+Đây là dự án mới theo yêu cầu bắt đầu lại, không thay thế checkpoint A trên nhánh `main`. Nhân vật chơi là Duyên; Khim, Mochi, Mon và Mây xuất hiện trong nông trại. Thu hoạch 12 cây mỗi luống để mở một trang chuyện. Có bắp, khoai tây, cà chua, dâu tây. Không giới hạn thời gian. Chưa có gieo hạt, tưới cây, kinh tế hay xây nhà.
 
-Yêu cầu Node.js >=22.12 và npm. Lần kiểm tra dùng Node 24.19.0/npm 11.9.0. Không cần API key hoặc `.env`.
+## Chơi trên web
 
-```bash
-npm install
+Bản tùy chỉnh chưa có URL hosting. Để đưa lên Vercel: import repository `duyens-farm`, chọn nhánh `restart/four-fields`, framework Vite, build `npm run build`, output `dist`, Node 22. Không cần biến môi trường. Nếu Vercel tạo project từ main, đặt Git → Production Branch thành `restart/four-fields` rồi deploy lại. Người chơi mở link deploy, không cần Git hay npm.
+
+WASD hoặc phím mũi tên để di chuyển, Space hoặc nút Thu hoạch khi đứng gần cây. Điện thoại có nút điều hướng. Sổ chuyện cho đọc lại những trang đã mở. Tạm dừng giữ nguyên tiến độ.
+
+## Chạy và kiểm thử
+
+Yêu cầu Node >=22.13.
+
+```sh
+npm ci
 npm run dev
-# Dev server cổng 3000
-npm run todos
+```
+
+Mở http://localhost:3030. Các kiểm tra:
+
+```sh
 npm run lint
 npm test
 npm run build
-npm run preview
 ```
 
-Checkout có lockfile có thể dùng `npm ci`; không cần `--legacy-peer-deps`. `lint` là TypeScript typecheck, chưa có ESLint. Build tạo `dist/`, base tương đối `./`; cần phục vụ bằng HTTP. Không commit dist/node_modules/file môi trường.
+`lint` là TypeScript kiểm tra kiểu, giống upstream, không phải ESLint. Xem [docs/QA.md](docs/QA.md) để biết kết quả thực tế.
 
-## Những gì thực sự có
+## Lưu tiến độ và nội dung
 
-| Hệ thống | Hiện trạng trong source |
-| --- | --- |
-| Nông trại | Lưới cố định 12×12, 16 ô trồng mặc định, nhà/kho/quầy/cây/rào procedural |
-| Điều khiển | WASD/mũi tên, click-to-move với A*, kéo chuột phải xoay, wheel zoom; camera diorama |
-| Trồng trọt | Cà rốt/lúa mì/cà chua, hạt miễn phí, tưới, 4 stage, thu hoạch, bán cây và sản phẩm |
-| Thời gian | 360 giây/ngày, ngủ hồi năng lượng, bảo toàn cây, tự ngủ nửa đêm |
-| Khim/mèo | Khim có lịch trình/chat/gift; Mochi theo Duyên/vuốt ve; Mon lấy 1 nông sản/bắt lại/trả qua đêm; Mây có quà mỗi ngày |
-| Xây dựng | Blueprint, footprint theo dữ liệu, xoay 90°, bảo vệ ô cửa, thi công có thời gian, dỡ hoàn 75% xu |
-| Chế biến | Cối xay/lò bánh/máy ép: bột, bánh cà rốt, bánh cà chua, nước ép và sốt cà chua |
-| Đơn hàng | 3 đơn ngẫu nhiên, trừ nguyên liệu/thưởng, thay đơn sau 2 giây và ngày mới |
-| Dân làng | Bảy/Hoa/Lan/Minh có lịch trình hiển thị, chat và quà yêu thích |
-| Nội dung | 4 chương hội thoại, vụ án Mon, sổ kỷ niệm, 4 thư, Dream Home 5 hạng mục |
-| Salon | Gội/cắt độ dài/chọn màu/kiểu, tip và EXP tay nghề |
-| Mùa | 4 mùa ×28 ngày, thời tiết xác định theo ngày; mưa tưới khi sang ngày; giông tạo việc sửa rào |
-| Khám phá | Modal rừng/hồ/đồi/hang trừ năng lượng và nhận đồ; chưa có vùng 3D riêng |
-| Save/cài đặt | localStorage v4, tìm khóa v1–v3/migration cơ bản, JSON export/import; Web Audio SFX/nhạc tổng hợp, giảm hạt mưa/tuyết |
+Lưu tự động trên trình duyệt với khóa `duyen_four_fields_v1`; lưu ngay khi thu hoạch và xác nhận trang chuyện. Không đọc, sửa hoặc chuyển đổi save v4 của dự án cũ. Bản lưu lỗi được bảo vệ khỏi ghi đè. Nút Tải bản lưu xuất JSON để giữ lại; chưa có chức năng nhập bản lưu hoặc đồng bộ giữa máy. Đổi domain hoặc dùng chế độ riêng tư có thể làm bạn không thấy tiến độ cũ.
 
-## Kiến trúc
+Chuyện chỉ dùng các thông tin đã xác nhận trong prompt. Các chi tiết chưa biết hiển thị TODO. Xem [src/content/PLACEHOLDERS.md](src/content/PLACEHOLDERS.md).
 
-- `src/core/`: types, hằng số, công trình/công thức/đơn hàng và Web Audio.
-- `src/systems/`: GameSimulation và saveSystem.
-- `src/content/`: tiếng Việt, dữ kiện xác nhận/fiction/TODO. quests.ts có định nghĩa mục tiêu, chưa có manager mục tiêu đầy đủ.
-- `src/world/`: lưới/A* độc lập Three.js; FarmScene chứa WebGL, raycast, input, chuyển động và tick.
-- `src/models/`: hình học procedural; Duyên/Khim đã có chibi và named parts. Hai kiểu tóc/trang phục Duyên là tùy chọn tạo model, chưa có tủ đồ runtime.
-- `src/ui/`: HUD/toolbar/blueprint/save/tutorial và modal gameplay.
-- `src/tests/`: 8 audit gốc + 7 regression Part A.
-- `scripts/todos.mjs`: quét marker TODO, ghi file/dòng/nội dung vào PLACEHOLDERS.md.
+## Nguồn và giấy phép
 
-Simulation không import React/Three, nhưng vẫn gọi audio và nhập FarmGrid. Renderer trực tiếp cập nhật người chơi/state; chưa có seam D0.
-
-## Nội dung cá nhân
-
-Buổi hẹn chỉ giữ quán cà phê sách, Khim hơi xuề xòa nhưng đã cố gắng chuẩn bị, hai người trò chuyện đủ thứ. Chi tiết khác là TODO. Mon dùng MON_FUR_COLOR xám tạm, chưa khẳng định màu lông. Tên salon/quán, tính cách Mây, thư ba mẹ, Chương 4 và thư cuối cần tác giả xác nhận.
-
-Cảnh tưởng tượng có `fiction: true` và nhãn UI; Chương 1/placeholder thư thật có `fiction: false`. Không viết lời mẫu như ký ức thật. Danh sách [PLACEHOLDERS.md](src/content/PLACEHOLDERS.md) có **30 lần xuất hiện TODO**; chạy `npm run todos` sau sửa source.
-
-## Phần chưa hoàn chỉnh
-
-- Unlock chương mới là mô tả; simulation chưa chặn thưởng lại chapter/mystery. Nút chương đã hoàn thành vẫn có handler.
-- Dream Home UI kiểm tra xu nhưng simulation chưa thu requiredCoins. Journal thiếu định nghĩa trang Chương 3/4 dù state có khóa.
-- Thư chưa lọc deliveryDay; thư theo mùa là template chưa nối hệ thống. Festival là nút thưởng/cờ modal, mở lại có thể nhận lại.
-- Salon chưa tính màu vào satisfaction hoặc thay model; EXP là tay nghề. Một số permit/quest chưa có flow unlock đầy đủ.
-- Save validation mới kiểm tra cấp cao; migration chưa bổ sung mọi trường thiếu. Test migration cơ bản không chứng minh mọi save v1 đều chơi được.
-- Đổi tab có thể bỏ pause thủ công/modal; chuyển động chưa dùng chung pause. HUD/crop stage chưa sync đều theo tick, WASD/playerPos và vị trí import cần QA.
-- Ô đất tự xây/userData và map khi dỡ cần QA; renderer tạo lại mesh, chưa dispose đầy đủ resource bị gỡ/listener; màu mùa chưa áp dụng đủ.
-- Chưa có third-person camera, land expansion, level/XP toàn game, shop, offline progress, arc engine, gallery, ảnh/ngày đặc biệt Part E.
-
-Các giới hạn được ghi nhận, chưa tuyên bố game hoàn thiện. Chi tiết [docs/QA.md](docs/QA.md).
-
-## QA thực tế
-
-11/10/2026: npm install sạch và npm ci không legacy peer deps; lint, **15 tests** và build qua. Chromium headless/SwiftShader render WebGL, click gieo–tưới–thu hoạch, đọc nội dung và save UI round-trip qua; một số hành vi qua simulation commands, mùa tăng tốc đến ngày 29. Chưa chơi thủ công đủ 28 ngày/kiểm tra âm thanh, tab thật hoặc FPS laptop.
-
-Build cảnh báo JS >500 kB: khoảng 1,018 kB minified/273 kB gzip. Chưa đo FPS/draw calls/triangles, không dùng ước tính trong comment làm kết quả đo. Model đều procedural, không thêm asset bên thứ ba.
+Giữ nguyên [LICENSE](LICENSE) MIT, copyright Lucas Ochs-Messick; README gốc tại [README.upstream.md](README.upstream.md). Các thay đổi cá nhân hóa cũng phát hành MIT. Model/âm thanh được tải từ URL CDN Mint nguyên bản; repo không chứa các file GLB/MP3. Chưa xác nhận giấy phép riêng của những asset này; không suy ra MIT của source áp dụng cho chúng. Cần mạng để tải chúng và không có chế độ offline hoàn chỉnh. Chi tiết ở [CREDITS.md](CREDITS.md).

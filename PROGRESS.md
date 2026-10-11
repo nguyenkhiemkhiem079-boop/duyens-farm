@@ -1,35 +1,27 @@
-# Tiến độ Duyên's Farm
+# Tiến độ bản Four Fields
 
-Cập nhật 11/10/2026. Baseline: ZIP tác giả gửi; GitHub main trước bàn giao chỉ có README, commit 6afc3df. Prompt trong ZIP thêm Part E nhưng Part A giống bản đính kèm; giữ nguyên prompt ZIP và chỉ làm Part A.
+Ngày kiểm tra: 2026-10-11. Bản mới được tách riêng theo yêu cầu giữ ý tưởng nhưng bắt đầu lại; checkpoint A trên `main` vẫn là bản cũ.
 
-## Đã làm
+## Đã triển khai
 
-- A1: package duyens-farm; bỏ esbuild trực tiếp, express/@types/express, Google GenAI, dotenv, motion, autoprefixer sau quét import/config. Bỏ .env.example, capability Gemini, bun.lock. Npm lockfile mới; Vite ESM dirname/base tương đối, Node >=22.12. Three 0.186 bỏ PCFSoftShadowMap: đổi PCFShadowMap sau warning browser.
-- A2: Mon xám placeholder, bỏ suy đoán màu; sửa chapters/journal/quests buổi hẹn, giả định cưới/tuổi thơ Khim. Giữ TODO, nhãn fiction dữ liệu/UI cho cảnh tưởng tượng.
-- A3: npm run todos, 30 marker có file/dòng; 7 regression mới bảo vệ nội dung/TODO/Mon/tóc-mắt/save round-trip. Runner node --import tsx tránh IPC pipe CLI bị sandbox chặn, không thêm runtime dependency.
-- A4: đọc source, viết lại README/PROGRESS/DECISIONS, thêm docs/QA.md, phân biệt tính năng có và giới hạn.
-- Giữ GameState/save v4, save keys, ID chapters/quests/mail/journal, gameplay và rewards hiện có.
+- Import nguyên source Four Fields từ snapshot `5ab1b942b6bb5169a0460b3cc682fe34fae76293`, giữ MIT và ghi công.
+- Cảnh nông trại, bốn loại cây, điều khiển bàn phím/cảm ứng, rig NPC, âm thanh và pipeline tải GLB của upstream.
+- Avatar chơi Duyên, model Khim, Mochi, Mon, Mây. Mochi đi theo Duyên.
+- Việt hóa UI, bỏ đếm ngược và thất bại do hết giờ.
+- Bốn trang chuyện dựa trên dữ kiện prompt. Chỉ mở sau khi xong từng luống, đọc lại trong sổ chuyện; giữ TODO.
+- Save mới, kiểm tra schema/thứ tự tiến độ, autosave, export JSON, bảo vệ dữ liệu lỗi và không đụng save v4.
+- Tạm dừng, chặn thu hoạch/di chuyển khi đọc chuyện, xóa phím giữ khi mất focus.
+- Static build dùng base tương đối, không cần biến môi trường.
 
-## Baseline trước sửa
+## Chưa triển khai
 
-npm install thất bại ERESOLVE: esbuild 0.25.12 không đáp ứng Vite 8.3.4 peer optional 0.27/0.28. Lần đầu còn EPERM proxy; quyền network cho phép tái hiện ERESOLVE. Lint/test/build đầu tiên không có tsc/tsx/vite vì chưa cài dependency. Không kế thừa báo cáo tests pass từ docs cũ.
+- Gieo/tưới, bán hàng, salon gameplay, xây nhà, multiplayer, các chương mở rộng.
+- Nhập JSON save, đồng bộ tiến độ, offline hoàn chỉnh.
+- Thay asset CDN bằng asset có giấy phép phân phối lại được xác nhận.
+- URL hosting cho bản Duyên và đo hiệu năng trên thiết bị di động thật.
 
-## QA Checkpoint A
+Kết quả kiểm tra thực tế: xem docs/QA.md. Không dùng kết quả kiểm thử của checkpoint A để chứng minh bản này.
 
-| Kiểm tra | Kết quả |
-| --- | --- |
-| Xóa node_modules/npm lock/bun lock, npm install | Qua, không legacy peer deps |
-| npm ci | Qua với lockfile mới |
-| npm run lint | Qua typecheck |
-| npm test | Qua 8 audit gốc + 7 regression mới |
-| npm run build | Qua, còn cảnh báo chunk lớn |
-| Browser smoke | Chromium headless/SwiftShader, click cây/save UI round-trip qua; commands và season tăng tốc tới ngày 29 |
-| Chơi thủ công 1 ngày/28 ngày, âm thanh/tab thật/FPS | Chưa xác nhận đủ; checklist docs/QA.md |
+## Tạm dừng theo yêu cầu chủ dự án
 
-## Giới hạn
-
-Gameplay có farming/Khim/mèo/build/production/orders/villagers/salon/chapters/journal/mail/Dream Home/calendar. Chưa có presentation mới. Unlock/reward lặp, Dream Home chi phí, mail/festival, validation sâu, pause/sync/disposal còn giới hạn cụ thể trong README/QA, không coi là đã sửa.
-
-## Next step — Checkpoint D-1
-
-Chưa bắt đầu D/B/E. Khi được giao Part D: **D0 trước** — interface state/events/commands giữa simulation và renderer, src/render/ mới chạy song song FarmScene. Sau đó **D1** — camera third-person follow/orbit/zoom, WASD/click-to-move collision và chế độ build/isometric. Tiếp **D2** — toy-like procedural world/palette/sky/cloud/mountain/grass/props/crops/ánh sáng/ngày đêm/mùa, giữ gameplay/save. Lint/test/build và QA browser sau mỗi bước; chỉ Checkpoint D-1 khi D0–D2 hoạt động trong lớp mới. Chưa xóa FarmScene trước parity.
+Đã lưu bản WIP, chưa phải passing checkpoint. Automation/timezone sẽ được xác nhận riêng. Điểm tiếp tục và các kiểm tra còn lại ở docs/RESUME.md.

@@ -1,0 +1,439 @@
+.four-fields {
+  --ink: #3c2a1d;
+  --cream: #fff8df;
+  --paper: rgba(255, 248, 223, 0.94);
+  --green: #3f7a42;
+  --red: #c84f3f;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  color: var(--ink);
+  background: #8fbd64;
+  font-family: "Avenir Next", "Trebuchet MS", system-ui, sans-serif;
+  touch-action: none;
+  user-select: none;
+}
+
+.four-fields canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ff-stage {
+  position: absolute;
+  inset: 0;
+}
+
+.ff-loading,
+.ff-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(44, 66, 35, 0.18);
+  backdrop-filter: blur(4px);
+}
+
+.ff-loading-card,
+.ff-card {
+  width: min(440px, calc(100vw - 36px));
+  padding: 28px;
+  border: 3px solid rgba(98, 62, 33, 0.22);
+  border-radius: 28px 22px 30px 20px;
+  background: var(--paper);
+  box-shadow: 0 16px 45px rgba(57, 39, 22, 0.25);
+  text-align: center;
+}
+
+.ff-eyebrow {
+  margin: 0 0 6px;
+  color: #6b8750;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.ff-card h1,
+.ff-card h2,
+.ff-loading-card h2 {
+  margin: 0;
+  color: #503421;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.1rem, 7vw, 4rem);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.ff-card h2,
+.ff-loading-card h2 {
+  font-size: clamp(1.8rem, 6vw, 3rem);
+}
+
+.ff-card p,
+.ff-loading-card p {
+  margin: 15px auto 20px;
+  max-width: 34ch;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.ff-button {
+  min-width: 190px;
+  min-height: 52px;
+  padding: 12px 22px;
+  border: 0;
+  border-radius: 999px;
+  color: #fffdf2;
+  background: #bd4a38;
+  box-shadow: inset 0 -4px 0 rgba(91, 36, 27, 0.3), 0 7px 16px rgba(91, 36, 27, 0.2);
+  font: inherit;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+
+.ff-button:hover {
+  transform: translateY(-1px);
+  background: #ca5946;
+}
+
+.ff-button:active {
+  transform: translateY(2px);
+}
+
+.ff-button:focus-visible,
+.ff-icon-button:focus-visible,
+.ff-pad button:focus-visible,
+.ff-harvest:focus-visible {
+  outline: 4px solid #fff;
+  outline-offset: 3px;
+}
+
+.ff-loader {
+  height: 10px;
+  margin-top: 18px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #d8d8af;
+}
+
+.ff-loader::after {
+  display: block;
+  width: 42%;
+  height: 100%;
+  border-radius: inherit;
+  background: #6d9b54;
+  content: "";
+  animation: ff-load 1.1s ease-in-out infinite alternate;
+}
+
+@keyframes ff-load {
+  to { transform: translateX(138%); }
+}
+
+.ff-hud {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.ff-progress {
+  position: absolute;
+  top: max(16px, env(safe-area-inset-top));
+  left: max(16px, env(safe-area-inset-left));
+  display: flex;
+  gap: 7px;
+  margin: 0;
+  padding: 9px;
+  border-radius: 18px;
+  background: var(--paper);
+  box-shadow: 0 8px 22px rgba(52, 43, 26, 0.18);
+  list-style: none;
+}
+
+.ff-progress li {
+  display: grid;
+  width: 43px;
+  height: 38px;
+  place-items: center;
+  border-radius: 12px;
+  color: #8c795c;
+  background: #e8e1c7;
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.ff-progress li.done {
+  color: white;
+  background: #5f914f;
+}
+
+.ff-progress li.active {
+  color: white;
+  background: #c45a40;
+  box-shadow: 0 0 0 3px #fff4be;
+}
+
+.ff-timer {
+  position: absolute;
+  top: max(16px, env(safe-area-inset-top));
+  right: max(16px, env(safe-area-inset-right));
+  min-width: 112px;
+  padding: 10px 16px;
+  border-radius: 18px;
+  background: var(--paper);
+  box-shadow: 0 8px 22px rgba(52, 43, 26, 0.18);
+  text-align: center;
+}
+
+.ff-timer span {
+  display: block;
+  color: #80694b;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.ff-timer strong {
+  display: block;
+  font-size: 2rem;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.ff-timer.warning {
+  color: #b3372e;
+  animation: ff-pulse 0.65s ease-in-out infinite alternate;
+}
+
+@keyframes ff-pulse {
+  to { transform: scale(1.06); }
+}
+
+.ff-objective {
+  position: absolute;
+  bottom: max(20px, env(safe-area-inset-bottom));
+  left: max(18px, env(safe-area-inset-left));
+  min-width: 230px;
+  padding: 13px 16px;
+  border-radius: 18px;
+  background: var(--paper);
+  box-shadow: 0 8px 22px rgba(52, 43, 26, 0.18);
+}
+
+.ff-objective small {
+  display: block;
+  color: #80694b;
+  font-weight: 900;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.ff-objective strong {
+  display: block;
+  margin-top: 2px;
+  font-size: 1.08rem;
+}
+
+.ff-meter {
+  height: 7px;
+  margin-top: 9px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #d7ceb0;
+}
+
+.ff-meter i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: #6a994f;
+  transition: width 180ms ease;
+}
+
+.ff-icon-button {
+  position: absolute;
+  right: max(18px, env(safe-area-inset-right));
+  bottom: max(20px, env(safe-area-inset-bottom));
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  color: var(--ink);
+  background: var(--paper);
+  box-shadow: 0 8px 22px rgba(52, 43, 26, 0.18);
+  font-size: 1.2rem;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.ff-controls-note {
+  position: absolute;
+  right: 78px;
+  bottom: max(29px, calc(env(safe-area-inset-bottom) + 9px));
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(255, 248, 223, 0.84);
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.ff-touch {
+  display: none;
+}
+
+.ff-toast {
+  position: absolute;
+  top: 88px;
+  left: 50%;
+  z-index: 6;
+  padding: 10px 18px;
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(74, 101, 52, 0.92);
+  box-shadow: 0 8px 20px rgba(48, 38, 25, 0.2);
+  font-family: Georgia, serif;
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  font-weight: 800;
+  transform: translateX(-50%);
+  animation: ff-toast 1.5s ease both;
+}
+
+@keyframes ff-toast {
+  0% { opacity: 0; transform: translate(-50%, -8px) scale(0.96); }
+  15%, 80% { opacity: 1; transform: translate(-50%, 0) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -4px) scale(0.98); }
+}
+
+@media (pointer: coarse), (max-width: 760px) {
+  .ff-controls-note {
+    display: none;
+  }
+
+  .ff-objective {
+    bottom: max(104px, calc(env(safe-area-inset-bottom) + 92px));
+    min-width: 190px;
+  }
+
+  .ff-icon-button {
+    bottom: max(112px, calc(env(safe-area-inset-bottom) + 100px));
+  }
+
+  .ff-touch {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 7;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 14px max(18px, env(safe-area-inset-right)) max(18px, env(safe-area-inset-bottom)) max(18px, env(safe-area-inset-left));
+    pointer-events: none;
+  }
+
+  .ff-pad {
+    position: relative;
+    width: 132px;
+    height: 92px;
+    pointer-events: auto;
+  }
+
+  .ff-pad button {
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    border: 2px solid rgba(255,255,255,0.78);
+    border-radius: 15px;
+    color: #fff;
+    background: rgba(59, 79, 44, 0.78);
+    font-size: 1.1rem;
+    font-weight: 900;
+  }
+
+  .ff-pad .up { top: 0; left: 43px; }
+  .ff-pad .down { bottom: 0; left: 43px; }
+  .ff-pad .left { bottom: 0; left: 0; }
+  .ff-pad .right { right: 0; bottom: 0; }
+
+  .ff-harvest {
+    width: 92px;
+    height: 70px;
+    border: 3px solid rgba(255,255,255,0.8);
+    border-radius: 28px;
+    color: #fff;
+    background: rgba(185, 69, 48, 0.88);
+    box-shadow: inset 0 -5px 0 rgba(95, 38, 26, 0.28);
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 1000;
+    letter-spacing: 0.06em;
+    pointer-events: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .ff-progress li {
+    width: 34px;
+    height: 34px;
+  }
+
+  .ff-timer {
+    min-width: 86px;
+    padding: 9px 12px;
+  }
+
+  .ff-timer strong {
+    font-size: 1.6rem;
+  }
+
+  .ff-card,
+  .ff-loading-card {
+    padding: 24px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ff-loader::after,
+  .ff-timer.warning,
+  .ff-toast {
+    animation: none;
+  }
+}
+
+/* Duyên's Farm additions; upstream scene and wood/paper styling retained. */
+.df-toolbar { position:absolute; top:18px; right:18px; display:flex; gap:8px; pointer-events:auto; }
+.df-toolbar button, .df-desktop-harvest { font:inherit; font-weight:700; color:var(--ink); background:var(--paper); padding:10px 14px; border:0; border-radius:14px; cursor:pointer; box-shadow:0 5px 20px #342b1a24; }
+.df-desktop-harvest { position:absolute; right:24px; bottom:80px; z-index:4; }
+.df-credit { display:block; margin-top:18px; color:#80694b; }
+.df-book { max-height:85dvh; overflow-y:auto; }
+.df-page { display:block; width:100%; margin:10px 0; padding:14px; background:#fff7df; border:1px solid #cbbd98; border-radius:14px; font:inherit; text-align:left; cursor:pointer; }
+.df-page small { display:block; margin-top:4px; }
+.df-page:disabled { opacity:.55; cursor:default; }
+.df-todo { font-size:.85rem; color:#80694b; border-left:3px solid #b7a982; padding-left:12px; }
+.df-save-note { position:absolute; top:80px; left:18px; right:18px; z-index:9; background:#fff7df; padding:12px; border-radius:12px; font-size:.8rem; }
+.ff-card .df-todo { color:#80694b; }
+.df-toolbar button:focus-visible, .df-page:focus-visible, .df-desktop-harvest:focus-visible { outline:3px solid #c86645; outline-offset:3px; }
+@media (max-width:760px), (pointer:coarse) {
+  .df-toolbar { top:82px; left:14px; right:14px; justify-content:flex-end; flex-wrap:wrap; gap:5px; }
+  .df-toolbar button { font-size:.75rem; padding:9px; }
+  .df-desktop-harvest { display:none; }
+  .df-save-note { top:145px; }
+  .ff-toast { bottom:200px; }
+  .ff-objective small { letter-spacing:0; font-size:.65rem; }
+}
+.four-fields *, .four-fields *::before, .four-fields *::after { box-sizing:border-box; }
+.df-book { touch-action:pan-y; overscroll-behavior:contain; }
+/* Keep save/sound/book actions reachable above the story and completion cards. */
+.ff-hud { z-index:auto; }
+.df-toolbar { z-index:12; }
+@media (max-width:760px), (pointer:coarse) {
+  .ff-overlay:has(.df-book) { padding-top:142px; }
+  .df-book { max-height:calc(100dvh - 170px); }
+}

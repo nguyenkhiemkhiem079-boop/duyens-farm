@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 2,
+  "order": 240,
+  "slug": "four-fields",
+  "title": "Four Fields",
+  "description": "Harvest corn, potatoes, tomatoes, and strawberries across four timed plots in a warm storybook miniature farm.",
+  "status": "published",
+  "publishedAt": "2026-07-25",
+  "tags": ["React", "Three.js", "Farming", "Arcade"],
+  "prompt": {
+    "version": 1,
+    "objective": "Build a compact four-stage harvesting game with rising time pressure.",
+    "mintAssets": [
+      {
+        "kind": "asset-pack",
+        "brief": "A farmstead, four crop families, friendly animals, a farmer, and a scythe."
+      },
+      {
+        "kind": "model-animation",
+        "brief": "Idle, walk, harvest, reap, and victory motions for the farmer."
+      },
+      {
+        "kind": "audio",
+        "brief": "Country music, farm ambience, harvest, timer, victory, and UI sounds."
+      }
+    ],
+    "experience": [
+      "Clear four crop plots before their timers expire.",
+      "Restart after a timeout and celebrate a full clear."
+    ],
+    "visualDirection": "Warm miniature farm with rounded forms, morning light, and honey-wood UI."
+  },
+  "thumbnail": {
+    "src": "/experience-assets/four-fields/social-card.webp",
+    "alt": "A warm storybook miniature farm with a barn, farmhouse, fenced fields, hay bales, and a water trough."
+  },
+  "social": {
+    "title": "Four Fields",
+    "description": "Clear four timed crop plots in a warm miniature farm.",
+    "image": {
+      "src": "/experience-assets/four-fields/social-card.webp",
+      "alt": "A warm storybook miniature farm with a barn, farmhouse, fenced fields, hay bales, and a water trough.",
+      "width": 1200,
+      "height": 630,
+      "accent": "#D8A34D"
+    }
+  },
+  "runtime": {
+    "kind": "bundle",
+    "src": "/_experiences/four-fields/index.html",
+    "title": "Four Fields"
+  }
+}

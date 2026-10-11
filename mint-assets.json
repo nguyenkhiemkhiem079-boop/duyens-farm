@@ -1,0 +1,424 @@
+{
+  "registryVersion": 1,
+  "assetRoot": "public",
+  "delivery": "mint_cdn",
+  "assets": {
+    "world": {
+      "source": {
+        "manifestVersion": 1,
+        "kind": "asset",
+        "assetType": "model",
+        "assetId": "ks7d4wk1tcpg60w3yy3gwp7w298b23fz"
+      },
+      "mode": "remote_url",
+      "artifacts": {
+        "canonical_model": {
+          "artifactId": "glb/four-plot-farmstead-normalized-fc6276ad4013c4fd.glb",
+          "role": "canonical_model",
+          "format": "glb",
+          "contentType": "model/gltf-binary",
+          "filename": "farmstead.glb",
+          "loaderHint": "gltf",
+          "byteSize": 1041772,
+          "runtimeUrl": "https://cdn.mint.gg/glb/four-plot-farmstead-normalized-fc6276ad4013c4fd.glb"
+        }
+      }
+    },
+    "sprouts": {
+      "source": {
+        "manifestVersion": 1,
+        "kind": "asset",
+        "assetType": "model",
+        "assetId": "ks7fwvr8c9w53h7v2sxfrbs4098b2bbb"
+      },
+      "mode": "remote_url",
+      "artifacts": {
+        "canonical_model": {
+          "artifactId": "glb/storybook-sprout-quartet-normalized-59b07c947fea38fa.glb",
+          "role": "canonical_model",
+          "format": "glb",
+          "contentType": "model/gltf-binary",
+          "filename": "sprout-quartet.glb",
+          "loaderHint": "gltf",
+          "byteSize": 942624,
+          "runtimeUrl": "https://cdn.mint.gg/glb/storybook-sprout-quartet-normalized-59b07c947fea38fa.glb"
+        }
+      }
+    },
+    "mature_crops": {
+      "source": {
+        "manifestVersion": 1,
+        "kind": "asset",
+        "assetType": "model",
+        "assetId": "ks7bnka54q6c9qx9h26t883wqs8b22a5"
+      },
+      "mode": "remote_url",
+      "artifacts": {
+        "canonical_model": {
+          "artifactId": "glb/storybook-crop-trio-normalized-afbdb66d0194f74c.glb",
+          "role": "canonical_model",
+          "format": "glb",
+          "contentType": "model/gltf-binary",
+          "filename": "mature-trio.glb",
+          "loaderHint": "gltf",
+          "byteSize": 1183264,
+          "runtimeUrl": "https://cdn.mint.gg/glb/storybook-crop-trio-normalized-afbdb66d0194f74c.glb"
+        }
+      }
+    },
+    "corn": {
+      "source": {
+        "manifestVersion": 1,
+        "kind": "asset",
+        "assetType": "model",
+        "assetId": "ks73hvsg49r0x0fdp8pnrk6he98b275r"
+      },
+      "mode": "remote_url",
+      "artifacts": {
+        "canonical_model": {
+          "artifactId": "glb/golden-tassel-corn-normalized-2a09659f96bd70a4.glb",
+          "role": "canonical_model",
+          "format": "glb",
+          "contentType": "model/gltf-binary",
+          "filename": "corn-mature.glb",
+          "loaderHint": "gltf",
+          "byteSize": 948056,
+          "runtimeUrl": "https://cdn.mint.gg/glb/golden-tassel-corn-normalized-2a09659f96bd70a4.glb"
+        }
+      }
+    },
+    "scythe": {
+      "source": {
+        "manifestVersion": 1,
+        "kind": "asset",
+        "assetType": "model",
+        "assetId": "ks7dg62jbrjnjx5my036nkye118b2e5h"
+      },
+      "mode": "remote_url",
+      "artifacts": {
+        "canonical_model": {
+          "artifactId": "glb/honeywood-harvest-scythe-normalized-5779a7e63f144119.glb",
+          "role": "canonical_model",
+          "format": "glb",
+          "contentType": "model/gltf-binary",
+          "filename": "scythe.glb",
+          "loaderHint": "gltf",
+          "byteSize": 749168,
+          "runtimeUrl": "https://cdn.mint.gg/glb/honeywood-harvest-scythe-normalized-5779a7e63f144119.glb"
+        }
+      }
+    },
+    "animals": {
+      "source": {
+        "manifestVersion": 1,
+        "kind": "asset",
+        "assetType": "asset_pack",
+        "assetId": "th7bches0rejg6m5h8am2y8dvx8b29jt"
+      },
+      "mode": "remote_url",
+      "artifacts": {
+        "cat": {
+          "artifactId": "glb/farm-cat-normalized-a2198e83c29d4222.glb",
+          "role": "canonical_model",
+          "format": "glb",
+          "contentType": "model/gltf-binary",
+          "filename": "cat.glb",
+          "loaderHint": "gltf",
+          "byteSize": 513760,
+          "runtimeUrl": "https://cdn.mint.gg/glb/farm-cat-normalized-a2198e83c29d4222.glb"
+        },
+        "dog": {
+          "artifactId": "glb/farm-dog-normalized-41edf17026147058.glb",
+          "role": "canonical_model",
+          "format": "glb",
+          "contentType": "model/gltf-binary",
+          "filename": "dog.glb",
+          "loaderHint": "gltf",
+          "byteSize": 552172,
+          "runtimeUrl": "https://cdn.mint.gg/glb/farm-dog-normalized-41edf17026147058.glb"
+        },
+        "chicken": {
+          "artifactId": "glb/chicken-normalized-d30c770f345fa40d.glb",
+          "role": "canonical_model",
+          "format": "glb",
+          "contentType": "model/gltf-binary",
+          "filename": "chicken.glb",
+          "loaderHint": "gltf",
+          "byteSize": 536584,
+          "runtimeUrl": "https://cdn.mint.gg/glb/chicken-normalized-d30c770f345fa40d.glb"
+        }
+      }
+    },
+    "farmer-animation": {
+      "source": {
+        "manifestVersion": 1,
+        "kind": "animation",
+        "assetType": "model_animation_batch",
+        "assetId": "w5798a2pj8g3qke3dtev2gzag58b2aa8"
+      },
+      "mode": "remote_url",
+      "artifacts": {
+        "rigged_character": {
+          "artifactId": "glb/farmer-rigged-glb-582fa0ab1b92f73c.glb",
+          "role": "rigged_character",
+          "format": "glb",
+          "contentType": "model/gltf-binary",
+          "filename": "farmer-rigged.glb",
+          "loaderHint": "gltf",
+          "byteSize": 4559616,
+          "runtimeUrl": "https://cdn.mint.gg/glb/farmer-rigged-glb-582fa0ab1b92f73c.glb"
+        },
+        "idle": {
+          "artifactId": "glb/farmer-idle-glb-90041cc216b13d4c.glb",
+          "role": "animation_clip",
+          "format": "glb",
+          "contentType": "model/gltf-binary",
+          "filename": "farmer-idle.glb",
+          "loaderHint": "gltf",
+          "byteSize": 4608564,
+          "runtimeUrl": "https://cdn.mint.gg/glb/farmer-idle-glb-90041cc216b13d4c.glb"
+        },
+        "walk": {
+          "artifactId": "glb/farmer-walk-glb-6f42ea78a3f69e12.glb",
+          "role": "animation_clip",
+          "format": "glb",
+          "contentType": "model/gltf-binary",
+          "filename": "farmer-walk.glb",
+          "loaderHint": "gltf",
+          "byteSize": 4606968,
+          "runtimeUrl": "https://cdn.mint.gg/glb/farmer-walk-glb-6f42ea78a3f69e12.glb"
+        },
+        "harvest": {
+          "artifactId": "glb/farmer-harvest-glb-b446fb9e8fcc9484.glb",
+          "role": "animation_clip",
+          "format": "glb",
+          "contentType": "model/gltf-binary",
+          "filename": "farmer-harvest.glb",
+          "loaderHint": "gltf",
+          "byteSize": 4675364,
+          "runtimeUrl": "https://cdn.mint.gg/glb/farmer-harvest-glb-b446fb9e8fcc9484.glb"
+        },
+        "victory": {
+          "artifactId": "glb/farmer-victory-glb-2e717aa9e090b499.glb",
+          "role": "animation_clip",
+          "format": "glb",
+          "contentType": "model/gltf-binary",
+          "filename": "farmer-victory.glb",
+          "loaderHint": "gltf",
+          "byteSize": 4672572,
+          "runtimeUrl": "https://cdn.mint.gg/glb/farmer-victory-glb-2e717aa9e090b499.glb"
+        }
+      }
+    },
+    "farmer-reap": {
+      "source": {
+        "manifestVersion": 1,
+        "kind": "animation",
+        "assetType": "model_animation_batch",
+        "assetId": "w57960jqteg0zhd3p09rzfa5p98b2374"
+      },
+      "mode": "remote_url",
+      "artifacts": {
+        "reap": {
+          "artifactId": "glb/farmer-reap-glb-cde2ae9dbb4f7efc.glb",
+          "role": "animation_clip",
+          "format": "glb",
+          "contentType": "model/gltf-binary",
+          "filename": "farmer-reap.glb",
+          "loaderHint": "gltf",
+          "byteSize": 4631612,
+          "runtimeUrl": "https://cdn.mint.gg/glb/farmer-reap-glb-cde2ae9dbb4f7efc.glb"
+        }
+      }
+    },
+    "audio-music": {
+      "source": {
+        "manifestVersion": 1,
+        "kind": "asset",
+        "assetType": "audio",
+        "assetId": "xd75r4ypxsr7d39s1q2pq8z8kn8b2zkm"
+      },
+      "mode": "remote_url",
+      "artifacts": {
+        "audio_file": {
+          "artifactId": "audio/xd75r4ypxsr7d39s1q2pq8z8kn8b2zkm/four-fields-country-twang-score-abd9ad-3af9d06f3382b658.mp3",
+          "role": "audio",
+          "format": "mp3",
+          "contentType": "audio/mpeg",
+          "filename": "country-twang-score.mp3",
+          "loaderHint": "audio",
+          "byteSize": 1454457,
+          "runtimeUrl": "https://cdn.mint.gg/audio/xd75r4ypxsr7d39s1q2pq8z8kn8b2zkm/four-fields-country-twang-score-abd9ad-3af9d06f3382b658.mp3"
+        }
+      }
+    },
+    "audio-ambience": {
+      "source": {
+        "manifestVersion": 1,
+        "kind": "asset",
+        "assetType": "audio",
+        "assetId": "xd73rj388255ek6rvqwbp7q5qn8b3es5"
+      },
+      "mode": "remote_url",
+      "artifacts": {
+        "audio_file": {
+          "artifactId": "audio/xd73rj388255ek6rvqwbp7q5qn8b3es5/four-fields-farm-morning-ambience-ab2a61-2ae25ad7d18e7a39.mp3",
+          "role": "audio",
+          "format": "mp3",
+          "contentType": "audio/mpeg",
+          "filename": "farm-morning-ambience.mp3",
+          "loaderHint": "audio",
+          "byteSize": 1094594,
+          "runtimeUrl": "https://cdn.mint.gg/audio/xd73rj388255ek6rvqwbp7q5qn8b3es5/four-fields-farm-morning-ambience-ab2a61-2ae25ad7d18e7a39.mp3"
+        }
+      }
+    },
+    "audio-harvest": {
+      "source": {
+        "manifestVersion": 1,
+        "kind": "asset",
+        "assetType": "audio",
+        "assetId": "xd766bds2gnb1sn3s2hqzdfss98b2q5k"
+      },
+      "mode": "remote_url",
+      "artifacts": {
+        "audio_file": {
+          "artifactId": "audio/xd766bds2gnb1sn3s2hqzdfss98b2q5k/four-fields-harvest-sound-be5fee-1dad519ee6d82399.mp3",
+          "role": "audio",
+          "format": "mp3",
+          "contentType": "audio/mpeg",
+          "filename": "harvest.mp3",
+          "loaderHint": "audio",
+          "byteSize": 20106,
+          "runtimeUrl": "https://cdn.mint.gg/audio/xd766bds2gnb1sn3s2hqzdfss98b2q5k/four-fields-harvest-sound-be5fee-1dad519ee6d82399.mp3"
+        }
+      }
+    },
+    "audio-complete": {
+      "source": {
+        "manifestVersion": 1,
+        "kind": "asset",
+        "assetType": "audio",
+        "assetId": "xd783y6m27fvavn5h7reprzvqd8b3f6c"
+      },
+      "mode": "remote_url",
+      "artifacts": {
+        "audio_file": {
+          "artifactId": "audio/xd783y6m27fvavn5h7reprzvqd8b3f6c/four-fields-plot-complete-c7b28f-5f2f8b8bd3aa44f0.mp3",
+          "role": "audio",
+          "format": "mp3",
+          "contentType": "audio/mpeg",
+          "filename": "plot-complete.mp3",
+          "loaderHint": "audio",
+          "byteSize": 40586,
+          "runtimeUrl": "https://cdn.mint.gg/audio/xd783y6m27fvavn5h7reprzvqd8b3f6c/four-fields-plot-complete-c7b28f-5f2f8b8bd3aa44f0.mp3"
+        }
+      }
+    },
+    "audio-growth": {
+      "source": {
+        "manifestVersion": 1,
+        "kind": "asset",
+        "assetType": "audio",
+        "assetId": "xd7a6g86z57rz9bpxb1w6ssn398b2f6a"
+      },
+      "mode": "remote_url",
+      "artifacts": {
+        "audio_file": {
+          "artifactId": "audio/xd7a6g86z57rz9bpxb1w6ssn398b2f6a/four-fields-crop-growth-77535f-426eb2f1d34aa6f3.mp3",
+          "role": "audio",
+          "format": "mp3",
+          "contentType": "audio/mpeg",
+          "filename": "growth.mp3",
+          "loaderHint": "audio",
+          "byteSize": 29301,
+          "runtimeUrl": "https://cdn.mint.gg/audio/xd7a6g86z57rz9bpxb1w6ssn398b2f6a/four-fields-crop-growth-77535f-426eb2f1d34aa6f3.mp3"
+        }
+      }
+    },
+    "audio-warning": {
+      "source": {
+        "manifestVersion": 1,
+        "kind": "asset",
+        "assetType": "audio",
+        "assetId": "xd77m8z6hy414cz95kr75b6htx8b3s4z"
+      },
+      "mode": "remote_url",
+      "artifacts": {
+        "audio_file": {
+          "artifactId": "audio/xd77m8z6hy414cz95kr75b6htx8b3s4z/four-fields-timer-warning-f72816-a08697685c3f408c.mp3",
+          "role": "audio",
+          "format": "mp3",
+          "contentType": "audio/mpeg",
+          "filename": "timer-warning.mp3",
+          "loaderHint": "audio",
+          "byteSize": 17180,
+          "runtimeUrl": "https://cdn.mint.gg/audio/xd77m8z6hy414cz95kr75b6htx8b3s4z/four-fields-timer-warning-f72816-a08697685c3f408c.mp3"
+        }
+      }
+    },
+    "audio-timeout": {
+      "source": {
+        "manifestVersion": 1,
+        "kind": "asset",
+        "assetType": "audio",
+        "assetId": "xd74eptayt6tr1stx0yahfk37n8b3g3h"
+      },
+      "mode": "remote_url",
+      "artifacts": {
+        "audio_file": {
+          "artifactId": "audio/xd74eptayt6tr1stx0yahfk37n8b3g3h/four-fields-timeout-bd8423-2bfa66daa2d1bada.mp3",
+          "role": "audio",
+          "format": "mp3",
+          "contentType": "audio/mpeg",
+          "filename": "timeout.mp3",
+          "loaderHint": "audio",
+          "byteSize": 48945,
+          "runtimeUrl": "https://cdn.mint.gg/audio/xd74eptayt6tr1stx0yahfk37n8b3g3h/four-fields-timeout-bd8423-2bfa66daa2d1bada.mp3"
+        }
+      }
+    },
+    "audio-victory": {
+      "source": {
+        "manifestVersion": 1,
+        "kind": "asset",
+        "assetType": "audio",
+        "assetId": "xd736466qk96rw34dza9v6kw898b2jcf"
+      },
+      "mode": "remote_url",
+      "artifacts": {
+        "audio_file": {
+          "artifactId": "audio/xd736466qk96rw34dza9v6kw898b2jcf/four-fields-victory-15e997-f7a5a877bdde64fd.mp3",
+          "role": "audio",
+          "format": "mp3",
+          "contentType": "audio/mpeg",
+          "filename": "victory.mp3",
+          "loaderHint": "audio",
+          "byteSize": 134751,
+          "runtimeUrl": "https://cdn.mint.gg/audio/xd736466qk96rw34dza9v6kw898b2jcf/four-fields-victory-15e997-f7a5a877bdde64fd.mp3"
+        }
+      }
+    },
+    "audio-click": {
+      "source": {
+        "manifestVersion": 1,
+        "kind": "asset",
+        "assetType": "audio",
+        "assetId": "xd72qqyg7xgcng5xhqhjc6p9xn8b2r4t"
+      },
+      "mode": "remote_url",
+      "artifacts": {
+        "audio_file": {
+          "artifactId": "audio/xd72qqyg7xgcng5xhqhjc6p9xn8b2r4t/four-fields-wooden-ui-click-d33f16-d4a5760f67c420bb.mp3",
+          "role": "audio",
+          "format": "mp3",
+          "contentType": "audio/mpeg",
+          "filename": "ui-click.mp3",
+          "loaderHint": "audio",
+          "byteSize": 8821,
+          "runtimeUrl": "https://cdn.mint.gg/audio/xd72qqyg7xgcng5xhqhjc6p9xn8b2r4t/four-fields-wooden-ui-click-d33f16-d4a5760f67c420bb.mp3"
+        }
+      }
+    }
+  }
+}
