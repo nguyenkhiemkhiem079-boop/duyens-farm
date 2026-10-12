@@ -6,7 +6,11 @@ Dùng trực tiếp toàn bộ source của [Four Fields](https://github.com/min
 
 ## Chơi trên web
 
-Bản tùy chỉnh chưa có URL hosting. Để đưa lên Vercel: import repository `duyens-farm`, chọn nhánh `restart/four-fields`, framework Vite, build `npm run build`, output `dist`, Node 22. Không cần biến môi trường. Nếu Vercel tạo project từ main, đặt Git → Production Branch thành `restart/four-fields` rồi deploy lại. Người chơi mở link deploy, không cần Git hay npm.
+Chơi tại [Nông trại của Duyên](https://duyens-farm-four-fields-20261012.sharp-kiwi-1795.chatgpt.site). Sites đã xác nhận xuất bản thành công. Link riêng tư: đăng nhập ChatGPT bằng tài khoản chủ dự án để truy cập. Nếu cần, mở [Đăng nhập ChatGPT](https://duyens-farm-four-fields-20261012.sharp-kiwi-1795.chatgpt.site/signin-with-chatgpt?return_to=%2F). Người chơi không cần Git, Node hoặc npm.
+
+Tiến độ giữ trên trình duyệt của domain này. Chưa có đồng bộ qua máy hoặc nhập JSON save.
+
+Nếu tự host trên Vercel: import repo, chọn production branch `restart/four-fields`, Vite, build `npm run build`, output `dist`, Node 22; không cần biến môi trường. Không đổi repo riêng tư thành công khai để deploy.
 
 WASD hoặc phím mũi tên để di chuyển, Space hoặc nút Thu hoạch khi đứng gần cây. Điện thoại có nút điều hướng. Sổ chuyện cho đọc lại những trang đã mở. Tạm dừng giữ nguyên tiến độ.
 

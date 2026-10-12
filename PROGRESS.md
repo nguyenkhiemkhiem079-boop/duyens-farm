@@ -18,7 +18,7 @@ Ngày kiểm tra lại: 2026-10-12 (giờ Việt Nam). Bản mới được tác
 - Gieo/tưới, bán hàng, salon gameplay, xây nhà, multiplayer, các chương mở rộng.
 - Nhập JSON save, đồng bộ tiến độ, offline hoàn chỉnh.
 - Thay asset CDN bằng asset có giấy phép phân phối lại được xác nhận.
-- URL hosting cho bản Duyên và đo hiệu năng trên thiết bị di động thật.
+- Đo hiệu năng trên thiết bị di động thật.
 
 Kết quả kiểm tra thực tế: xem docs/QA.md. Không dùng kết quả kiểm thử của checkpoint A để chứng minh bản này.
 
@@ -26,4 +26,4 @@ Kết quả kiểm tra thực tế: xem docs/QA.md. Không dùng kết quả ki�
 
 Đã tiếp tục từ WIP b042d5c. Cài sạch npm ci, lint, 8 tests và build chạy lại thành công. Production browser smoke hoàn tất 48 cây, 4 trang chuyện, victory, đọc lại, export và sổ chuyện responsive; không có pageerror. Browser error smoke giữ nguyên save lỗi khi CDN bị chặn.
 
-Sites riêng tư đã đăng ký, đang xuất bản bản QA. Điểm tiếp tục được cập nhật trong docs/RESUME.md; chưa coi đăng ký Site là có link live.
+Sites riêng tư đã xuất bản thành công, backend xác nhận trạng thái succeeded. Link chơi ở README.md. Bản runtime được QA tại checkpoint d65b927; browser trên URL live cũng đạt: tải asset, thu hoạch và điều khiển màn hình nhỏ. Chi tiết ở docs/QA.md.

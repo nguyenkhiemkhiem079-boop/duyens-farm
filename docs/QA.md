@@ -28,7 +28,7 @@ Production smoke test `scripts/browser_smoke.py`: **thành công**. Đã thu ho�
 
 Lượt trước đã được tạm dừng theo yêu cầu của chủ dự án sau hai luống và một cây cà chua. Lượt mới chạy lại từ đầu và hoàn tất cả bốn luống. Kịch bản đã gộp initialization thành một script để bảo đảm thứ tự. Các lần thử cũ gặp vấn đề focus nút Pause hoặc giả định cooldown trên renderer phần mềm; không dùng chúng làm kết quả pass.
 
-Sites riêng tư đã được đăng ký. Kết quả deploy và kiểm tra trên URL live sẽ bổ sung sau khi backend xác nhận; chưa coi đăng ký là đã xuất bản.
+Sites backend xác nhận **succeeded** tại deployment `appgdep_6acc2378d5c081918b36f4880de5e509`, source checkpoint `d65b9271e8e7ef60808a9a4008e65cb59f72e400`. Site owner-private, chỉ một owner được phép truy cập. Archive chứa manifest hosting và dist, có LICENSE/CREDITS; không có token, source credentials hoặc GLB/MP3 từ CDN. Browser trên URL live: **thành công**. HTTP 200 với service credential chính thức của Sites (chỉ gửi header đến đúng Site), tải GLB thật, vào game và thu hoạch một cây qua UI. Ở viewport 390×844, dùng nút điều hướng, xác nhận vị trí Duyên đổi qua save, pause/resume và nút Thu hoạch hiển thị; không tràn ngang và không có pageerror. Không phải thiết bị điện thoại thật, và không kiểm tra đăng nhập OAuth tương tác của người chơi bằng bài service-access này. Không lưu credential vào source hoặc ảnh kiểm tra. Lượt thử đầu sai định dạng header và lượt thử di chuyển trong lúc animation thu hoạch còn khóa đã được sửa ở kịch bản QA; không thay logic game để bỏ khóa.
 
 ## Cách chạy smoke test
 
@@ -59,4 +59,4 @@ Chưa đo FPS trên GPU thật hoặc tổng draw call của toàn cảnh. Rende
 
 ## Giới hạn
 
-Chưa xác nhận hiệu năng trên GPU/điện thoại thật, chưa có hosting URL cho bản tùy chỉnh. Cần mạng và CDN Mint khả dụng. Chưa xác nhận license riêng của model/âm thanh. Save mới không migrate từ bản cũ. Export chưa có import. Không có cơ chế trồng/tưới trong bản Four Fields gốc và bản này.
+Chưa xác nhận hiệu năng trên GPU/điện thoại thật. Link hosting riêng tư đã có; người chơi cần đăng nhập tài khoản chủ dự án. Cần mạng và CDN Mint khả dụng. Chưa xác nhận license riêng của model/âm thanh. Save mới không migrate từ bản cũ. Export chưa có import. Không có cơ chế trồng/tưới trong bản Four Fields gốc và bản này.
