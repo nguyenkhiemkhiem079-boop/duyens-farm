@@ -9,8 +9,16 @@ async def main():
   ctx=await b.new_context(viewport={'width':960,'height':640},device_scale_factor=0.5,accept_downloads=True)
   page=await ctx.new_page(); errors=[]; page.on('pageerror',lambda e:errors.append(str(e)))
   seed={'version':1,'activePlot':0,'harvested':[[False]*12 for _ in range(4)],'memories':[],'position':{'x':-3.6,'z':8}}
-  await page.add_init_script('if(!localStorage.getItem("'+KEY+'"))localStorage.setItem("'+KEY+'",'+json.dumps(json.dumps(seed))+');')
-  await page.add_init_script('const q=new URLSearchParams(location.search);if(q.has("testX")){const s=JSON.parse(localStorage.getItem("'+KEY+'"));s.position={x:Number(q.get("testX")),z:Number(q.get("testZ"))};localStorage.setItem("'+KEY+'",JSON.stringify(s));}')
+  await page.add_init_script(f"""
+    const key = {json.dumps(KEY)};
+    if (!localStorage.getItem(key)) localStorage.setItem(key, {json.dumps(json.dumps(seed))});
+    const q = new URLSearchParams(location.search);
+    if (q.has('testX')) {{
+      const progress = JSON.parse(localStorage.getItem(key));
+      progress.position = {{ x: Number(q.get('testX')), z: Number(q.get('testZ')) }};
+      localStorage.setItem(key, JSON.stringify(progress));
+    }}
+  """)
   centers=[(-3.6,8),(7.65,10.25),(10.8,1.25),(0,-3)]
   for plot,(x,z) in enumerate(centers):
    await page.goto(f'{BASE_URL}/?testX={x}&testZ={z}')
@@ -39,7 +47,7 @@ async def main():
      if sum(s['harvested'][plot])==n+1: break
     assert sum(s['harvested'][plot])==n+1,(plot,n,s)
     print('Harvest',plot+1,n+1,flush=True)
-   dialog=page.get_by_role('dialog'); await dialog.wait_for(timeout=10000)
+   dialog=page.get_by_role('dialog'); await dialog.wait_for(timeout=45000)
    assert len(s['memories'])==plot
    await page.screenshot(path=f'/tmp/duyen-four-fields-memory-{plot+1}.png')
    await dialog.get_by_role('button',name='Giữ ước mơ này' if plot==3 else 'Sang luống tiếp theo').click()

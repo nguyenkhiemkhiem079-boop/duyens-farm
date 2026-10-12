@@ -1,6 +1,6 @@
 # QA bản Four Fields cá nhân hóa
 
-Kiểm tra ngày 2026-10-11, Node v24.19.0, npm, Linux. Source upstream snapshot `5ab1b942b6bb5169a0460b3cc682fe34fae76293`.
+Kiểm tra lại ngày 2026-10-12 (giờ Việt Nam), Node v24.19.0, npm, Linux. Source upstream snapshot `5ab1b942b6bb5169a0460b3cc682fe34fae76293`.
 
 ## Baseline upstream
 
@@ -24,7 +24,11 @@ Chromium thực chạy với SwiftShader, không chỉ kiểm tra source. Ảnh 
 
 Browser kiểm tra lỗi tải (script browser_error_smoke.py): thành công. Chặn toàn bộ CDN, thấy thông báo tiếng Việt, bản lưu lỗi còn nguyên sau loading và pagehide.
 
-Bài kiểm tra đầy đủ `scripts/browser_smoke.py` đã được tạm dừng theo yêu cầu hẹn giờ của chủ dự án. Trên bản production preview, đã thu hoạch đủ bắp và khoai tây bằng UI, xác nhận hai trang chuyện mở đúng thứ tự và lưu được; đã bắt đầu luống cà chua (1 cây). Chưa hoàn tất toàn bộ 48 cây, chưa xác nhận trang 3/4, kết thúc, export cuối và mobile book. Không coi bản này là checkpoint QA hoàn tất. Script dùng vị trí đứng giữa luống trong bản lưu thử nghiệm để kiểm tra thu hoạch/story; không chứng minh người chơi đã đi xuyên toàn bản đồ. Hai lần thử trước chưa đạt: lần đầu Space kích hoạt lại nút Tạm dừng đang focus; lần sau giả định 1.2 giây thực đủ cho cooldown trên renderer phần mềm. Đã sửa kịch bản để bỏ focus và chờ trạng thái tiến độ, không ghi các lần đó là thành công. Một lần chạy DPR 1 được dừng sau 6 cây vì renderer phần mềm chậm, không ghi là hoàn thành.
+Production smoke test `scripts/browser_smoke.py`: **thành công**. Đã thu hoạch 48/48 cây bằng Space/nút UI, mở 4/4 trang chuyện đúng thứ tự, xác nhận màn kết thúc, đọc lại trang đầu, xuất JSON có đủ bốn trang, và kiểm tra sổ chuyện ở viewport 390×844 không tràn ngang. Không có pageerror. Fixture chỉ đặt avatar giữa từng luống; không tự hoàn tất cây/trang chuyện và không chứng minh việc đi xuyên cả bản đồ. Pause chặn thu hoạch đã được kiểm tra.
+
+Lượt trước đã được tạm dừng theo yêu cầu của chủ dự án sau hai luống và một cây cà chua. Lượt mới chạy lại từ đầu và hoàn tất cả bốn luống. Kịch bản đã gộp initialization thành một script để bảo đảm thứ tự. Các lần thử cũ gặp vấn đề focus nút Pause hoặc giả định cooldown trên renderer phần mềm; không dùng chúng làm kết quả pass.
+
+Sites riêng tư đã được đăng ký. Kết quả deploy và kiểm tra trên URL live sẽ bổ sung sau khi backend xác nhận; chưa coi đăng ký là đã xuất bản.
 
 ## Cách chạy smoke test
 
@@ -38,6 +42,20 @@ FARM_QA_URL=http://localhost:3031 python scripts/browser_smoke.py
 ```
 
 Script tạo context riêng, không sử dụng save thật. Fixture chỉ thay vị trí avatar, không tự điền crop harvested hay unlock story. Mỗi cây thu hoạch bằng nút UI/Space. Ảnh kiểm tra và export thử ghi ra `/tmp`.
+
+## Độ phức tạp model cá nhân
+
+Đếm từ geometry thật bằng Node/tsx (không phải đo draw call của cả cảnh):
+
+| Model | Mesh | Tam giác |
+| --- | ---: | ---: |
+| Duyên | 29 | 6.136 |
+| Khim | 32 | 5.576 |
+| Mochi | 16 | 4.040 |
+| Mon | 14 | 3.336 |
+| Mây | 14 | 3.336 |
+
+Chưa đo FPS trên GPU thật hoặc tổng draw call của toàn cảnh. Renderer phần mềm chậm nên bài smoke test chờ trạng thái cooldown, không giả định thời gian frame.
 
 ## Giới hạn
 

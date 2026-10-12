@@ -1,6 +1,6 @@
 # Tiến độ bản Four Fields
 
-Ngày kiểm tra: 2026-10-11. Bản mới được tách riêng theo yêu cầu giữ ý tưởng nhưng bắt đầu lại; checkpoint A trên `main` vẫn là bản cũ.
+Ngày kiểm tra lại: 2026-10-12 (giờ Việt Nam). Bản mới được tách riêng theo yêu cầu giữ ý tưởng nhưng bắt đầu lại; checkpoint A trên `main` vẫn là bản cũ.
 
 ## Đã triển khai
 
@@ -22,6 +22,8 @@ Ngày kiểm tra: 2026-10-11. Bản mới được tách riêng theo yêu cầu 
 
 Kết quả kiểm tra thực tế: xem docs/QA.md. Không dùng kết quả kiểm thử của checkpoint A để chứng minh bản này.
 
-## Tạm dừng theo yêu cầu chủ dự án
+## QA bản bắt đầu lại
 
-Đã lưu bản WIP, chưa phải passing checkpoint. Automation/timezone sẽ được xác nhận riêng. Điểm tiếp tục và các kiểm tra còn lại ở docs/RESUME.md.
+Đã tiếp tục từ WIP b042d5c. Cài sạch npm ci, lint, 8 tests và build chạy lại thành công. Production browser smoke hoàn tất 48 cây, 4 trang chuyện, victory, đọc lại, export và sổ chuyện responsive; không có pageerror. Browser error smoke giữ nguyên save lỗi khi CDN bị chặn.
+
+Sites riêng tư đã đăng ký, đang xuất bản bản QA. Điểm tiếp tục được cập nhật trong docs/RESUME.md; chưa coi đăng ký Site là có link live.
